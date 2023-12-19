@@ -17,7 +17,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
     - Good/Bad Loan Total Funded Amount
     - good/Bad Loan Total Received Amount
 
-3. ** Loan-Related Metrics and Trends**
+3. **Loan-Related Metrics and Trends**
     - Monthly Trends by Issue Date
     - Regional Trends by State
     - Loan Term Analysis
