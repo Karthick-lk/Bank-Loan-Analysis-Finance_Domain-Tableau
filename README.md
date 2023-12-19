@@ -10,3 +10,8 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
     - Total Amount Received (Month to Date, Month over Month)
     - Average Interest Rate (Month to Date, Month over Month)
     - Average Debt-to-Income Ratio (Month to Date, Month over Month)
+2. Good/Bad Loan KPI's
+    - Good/Bad Loan Application Percentage
+    - Good/Bad Loan Total Applications
+    - Good/Bad Loan Total Funded Amount
+    - good/Bad Loan Total Received Amount
