@@ -37,14 +37,14 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 
     - select count(*) as PMTD_Total_Loan_Applications from financial_loan                                       
       where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
-2. **Total Funded Amount (Month to Date, Month over Month)**
-    - select SUM(loan_amount) as Total_Funded_Amount from financial_loan;
+2. **Total Funded Amount (Month to Date, Month over Month)**                                
+    - select SUM(loan_amount) as Total_Funded_Amount from financial_loan;                              
 
-    - select sum(loan_amount) as MTD_Total_Funded_Amount from financial_loan
-      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;
+    - select sum(loan_amount) as MTD_Total_Funded_Amount from financial_loan                              
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                             
 
-    - select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+    - select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan                                      
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                             
                                                
 
 
