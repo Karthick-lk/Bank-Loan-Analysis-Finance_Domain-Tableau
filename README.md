@@ -28,7 +28,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 ## Dataset
 **financial_loan.csv** : The dataset contains columns like id, address_state, application_type emp_length, emp_title, grade, home_ownership, home_ownership, issus_date, last_credit_pull_date, last_payment_date, loan_status, next_payment_date, member_id, purpose, sub_grade, term, verification_status, annual_income, dti, installment, int_rate, loan_amount, total_acc, total_payment. 
 
-## Implementation of SQL for Stakeholders requirements
+## Implementing SQL for Stakeholders requirements
 1. **Total Loan Applications (Month to Date, Month over Month)**                               
     - select count(*) as Total_Loan_Applications from financial_loan;                                 
 
@@ -36,7 +36,16 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
       where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                    
 
     - select count(*) as PMTD_Total_Loan_Applications from financial_loan                                       
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                            
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+2. **Total Funded Amount (Month to Date, Month over Month)**
+    - select SUM(loan_amount) as Total_Funded_Amount from financial_loan;
+
+    - select sum(loan_amount) as MTD_Total_Funded_Amount from financial_loan
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;
+
+    - select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+                                               
 
 
 ## Dashboard Live here
