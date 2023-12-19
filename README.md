@@ -24,3 +24,26 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
     - Employee Length Analysis
     - Loan Purpose Breakdown
     - Home Ownership Analysis
+
+## Dataset
+financial_loan.csv : The dataset contains columns like id, address_state, application_type emp_length, emp_title, grade, home_ownership, home_ownership, issus_date, last_credit_pull_date, last_payment_date, loan_status, next_payment_date, member_id, purpose, sub_grade, term, verification_status, annual_income, dti, installment, int_rate, loan_amount, total_acc, total_payment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
