@@ -45,7 +45,22 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 
     - select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan                                      
       where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                             
-                                               
+3. **Total Amount Received (Month to Date, Month over Month)**
+    - select SUM(total_payment) as Total_Amount_Received from financial_loan;                                                 
+
+    - select sum(total_payment) as MTD_Total_Amount_Received from financial_loan                                          
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                           
+
+    - select sum(total_payment) as PMTD_Total_Amount_Received from financial_loan                                          
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                                                 
+4. **Total Amount Received (Month to Date, Month over Month)**                                                    
+    - select round(SUM(int_rate)/COUNT(int_rate)*100,2) as Average_Interest_Rate from financial_loan;                                            
+
+    - select round(sum(int_rate)/COUNT(int_rate)*100,2) as MTD_Average_Interest_Rate from financial_loan                                          
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                        
+
+    - select round(sum(int_rate)/COUNT(int_rate)*100,2) as PMTD_Average_Interest_Rate from financial_loan                                       
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                                                                
 
 
 ## Dashboard Live here
