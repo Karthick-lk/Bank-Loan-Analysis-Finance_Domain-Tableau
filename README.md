@@ -35,8 +35,12 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
     - select count(*) as MTD_Total_Loan_Applications from financial_loan                                              
       where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                    
 
-    - select count(*) as PMTD_Total_Loan_Applications from financial_loan                                       
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+    - select                                        
+	(select count(*) as MTD_Total_Loan_Applications from financial_loan                            
+	where MONTH(issue_date) = 12 and YEAR(issue_date)=2021) -                               
+	(select count(*) as PMTD_Total_Loan_Applications from financial_loan                                   
+	where MONTH(issue_date) = 11 and YEAR(issue_date)=2021) as MoM;
+                      
 2. **Total Funded Amount (Month to Date, Month over Month)**                                
     - select SUM(loan_amount) as Total_Funded_Amount from financial_loan;                              
 
@@ -44,7 +48,13 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
       where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                             
 
     - select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan                                      
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                             
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+    - select                                  
+	(select sum(loan_amount) as MTD_Total_Funded_Amount from financial_loan                                                             
+        where MONTH(issue_date) = 12 and YEAR(issue_date)=2021) -                                 
+	(select sum(loan_amount) as PMTD_Total_Funded_Amount from financial_loan                                                                     
+        where MONTH(issue_date) = 11 and YEAR(issue_date)=2021) as MoM;                                   
+                         
 3. **Total Amount Received (Month to Date, Month over Month)**
     - select SUM(total_payment) as Total_Amount_Received from financial_loan;                                                 
 
