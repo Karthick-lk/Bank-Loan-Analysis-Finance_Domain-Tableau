@@ -28,6 +28,12 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 ## Dataset
 **financial_loan.csv** : The dataset contains columns like id, address_state, application_type emp_length, emp_title, grade, home_ownership, home_ownership, issus_date, last_credit_pull_date, last_payment_date, loan_status, next_payment_date, member_id, purpose, sub_grade, term, verification_status, annual_income, dti, installment, int_rate, loan_amount, total_acc, total_payment. 
 
+## Dashboard/Report Live here
+
+
+## Created Report/Dashboard
+
+
 ## Implementing SQL for Stakeholders requirements
 1. **Total Loan Applications (Month to Date, Month over Month)**                               
     - select count(*) as Total_Loan_Applications from financial_loan;                                 
@@ -145,11 +151,56 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 	group by MONTH(issue_date), DATENAME(MONTH,issue_date)                                      
 	order by MONTH(issue_date);                                         
                                                			                                                
+11. **Regional Trends by State**
+    - select                           
+	address_state,                                  
+	COUNT(id) as Total_Loan_Applications,                        
+	sum(total_payment) as Total_Amount_Received,                       
+	sum(loan_amount) as Total_Loan_Amount                               
+	from financial_loan                             
+	group by address_state                            
+	order by sum(loan_amount) desc;                                     
 
+12. **Loan Term Analysis**
+    - select                                  
+	term,                               
+	COUNT(id) as Total_Loan_Applications,                         
+	sum(total_payment) as Total_Amount_Received,                              
+	sum(loan_amount) as Total_Loan_Amount                       
+   	from financial_loan                             
+	group by term                        
+	order by term desc;
 
-## Dashboard Live here
+13. **Employee Length Analysis**
+    - select                                  
+	emp_length,                          
+	COUNT(id) as Total_Loan_Applications,                             
+	sum(total_payment) as Total_Amount_Received,                              
+	sum(loan_amount) as Total_Loan_Amount                            
+   	from financial_loan                        
+	group by emp_length                          
+	order by emp_length;
 
-## Dashboard Created
+14. **Loan Purpose Breakdown**
+    - select                            
+	purpose,                              
+	COUNT(id) as Total_Loan_Applications,                             
+	sum(total_payment) as Total_Amount_Received,                              
+	sum(loan_amount) as Total_Loan_Amount                         
+ 	from financial_loan                              
+	group by purpose                             
+	order by COUNT(id)DESC;
+
+15. **Home Ownership Analysis**
+    - select                        
+	home_ownership,                                
+	COUNT(id) as Total_Loan_Applications,                             
+	sum(total_payment) as Total_Amount_Received,                           
+	sum(loan_amount) as Total_Loan_Amount                                 
+ 	from financial_loan                                    
+	group by home_ownership                                
+	order by COUNT(id)DESC;                                          
+
 
 
 
