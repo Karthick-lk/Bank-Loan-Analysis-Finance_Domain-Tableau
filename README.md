@@ -69,18 +69,26 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
     - select round(SUM(int_rate)/COUNT(int_rate)*100,2) as Average_Interest_Rate from financial_loan;                                            
 
     - select round(sum(int_rate)/COUNT(int_rate)*100,2) as MTD_Average_Interest_Rate from financial_loan                                          
-      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                        
-
-    - select round(sum(int_rate)/COUNT(int_rate)*100,2) as PMTD_Average_Interest_Rate from financial_loan                                       
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                                                                
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;
+      
+    - select                                  
+	(select round(sum(int_rate)/COUNT(int_rate)*100,2) as MTD_Average_Interest_Rate from financial_loan                                          
+        where MONTH(issue_date) = 12 and YEAR(issue_date)=2021) -                                 
+	(select round(sum(int_rate)/COUNT(int_rate)*100,2) as MTD_Average_Interest_Rate from financial_loan                                          
+        where MONTH(issue_date) = 11 and YEAR(issue_date)=2021) as MoM;
+                                                                                
 5. **Average Debt-to-Income Ratio (Month to Date, Month over Month)**
     - select Round(AVG(dti),4)*100 as AVG_DTI from financial_loan;                                      
 
     - select Round(AVG(dti),4)*100 as MTD_AVG_DTI from financial_loan                                            
       where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                      
 
-    - select Round(AVG(dti),4)*100 as PMTD_AVG_DTI from financial_loan                                            
-      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+    - select                                  
+	(select Round(AVG(dti),4)*100 as MTD_AVG_DTI from financial_loan                                            
+        where MONTH(issue_date) = 12 and YEAR(issue_date)=2021) -                                 
+	(select Round(AVG(dti),4)*100 as MTD_AVG_DTI from financial_loan                                            
+        where MONTH(issue_date) = 11 and YEAR(issue_date)=2021) as MoM;
+      
 6. **Good/Bad Loan Application Percentage**
 - Good Loan                             
     - select                                   
@@ -89,14 +97,16 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 - Bad Loan                                                                             
     - select                                            
 	COUNT(CASE when loan_status='Charged Off' then id end)*100/COUNT(id) as Bad_Load_Percentage                                             
-      from financial_loan;                                                                                                               
+      from financial_loan;
+                                                                                                           
 7. **Good/Bad Loan Total Applications**
 - Good Loan  																	                           
     - select COUNT(CASE when loan_status='Fully Paid' or loan_status='Current' then id end) as Total_Good_Loan						
       from financial_loan;				
 - Bad Loan                                                                             
     - select COUNT(CASE when loan_status='Charged Off' then id end) as Total_Bad_Load					
-      from financial_loan; 						                                           
+      from financial_loan;
+      				                                           
 8. **Good/Bad Loan Total Funded Amount**
 - Good Loan  	                     																                          
     - select sum(loan_amount) as Good_Loan_Funded_Amt from financial_loan                                   
@@ -104,6 +114,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 - Bad Loan                                                                             
     - select sum(loan_amount) as Bad_Loan_Funded_Amt from financial_loan				
       where loan_status in ('Charged Off');
+      
 8. **Good/Bad Loan Total Received Amount**
 - Good Loan  	                     																                          
     - select sum(total_payment) as Good_Loan_Amt_Received from financial_loan							
@@ -111,8 +122,28 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 - Bad Loan                                                                             
     - select sum(total_payment) as Bad_Loan_Amt_Received from financial_loan                                          
       where loan_status in ('Charged Off');
+      
 9. **Loan Status Grid View**
-    - 
+    - select                          
+	loan_status,                         
+	count(id) as Total_Loan_Applications,                                  
+	sum(total_payment) as Total_Amount_Received,                           
+	sum(loan_amount) as Total_Loan_Amount,                               
+	AVG(int_rate)*100 as Interest_Rate,                              
+	AVG(dti) *100 as DTI                                    
+     from financial_loan                              
+     group by loan_status;
+
+10. **Monthly Trends by Issue Date**
+    - select                                 
+	MONTH(issue_date) as Month_Num,                               
+	DATENAME(MONTH,issue_date) as Month_Name,                                
+	COUNT(id) as Total_Loan_Applications,                              
+	sum(total_payment) as Total_Amount_Received,                                   
+	sum(loan_amount) as Total_Loan_Amount                             
+	from financial_loan                              
+	group by MONTH(issue_date), DATENAME(MONTH,issue_date)                                      
+	order by MONTH(issue_date);                                         
                                                			                                                
 
 
