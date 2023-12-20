@@ -85,8 +85,20 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 - Bad Loan                                                                             
     - select COUNT(CASE when loan_status='Charged Off' then id end) as Total_Bad_Load					
       from financial_loan; 						                                           
-4. **Total Amount Received (Month to Date, Month over Month)**                                                    
-4. **Total Amount Received (Month to Date, Month over Month)**                                                    
+8. **Good/Bad Loan Total Funded Amount**
+- Good Loan  	                     																                          
+    - select sum(loan_amount) as Good_Loan_Funded_Amt from financial_loan                                   
+      where loan_status in ('Fully Paid','Current');	 														
+- Bad Loan                                                                             
+    - select sum(loan_amount) as Bad_Loan_Funded_Amt from financial_loan				
+      where loan_status in ('Charged Off');
+8.Good/Bad Loan Total Received Amount**
+- Good Loan  	                     																                          
+    - select sum(total_payment) as Good_Loan_Amt_Received from financial_loan							
+      where loan_status in ('Fully Paid','Current');                                                  	 										
+- Bad Loan                                                                             
+    - select sum(total_payment) as Bad_Loan_Amt_Received from financial_loan                                          
+      where loan_status in ('Charged Off');                                                     			                                                
 
 
 ## Dashboard Live here
