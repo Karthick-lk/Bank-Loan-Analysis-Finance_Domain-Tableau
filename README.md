@@ -53,7 +53,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 
     - select sum(total_payment) as PMTD_Total_Amount_Received from financial_loan                                          
       where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                                                 
-4. **Total Amount Received (Month to Date, Month over Month)**                                                    
+4. **Average Interest Rate (Month to Date, Month over Month)**                                                    
     - select round(SUM(int_rate)/COUNT(int_rate)*100,2) as Average_Interest_Rate from financial_loan;                                            
 
     - select round(sum(int_rate)/COUNT(int_rate)*100,2) as MTD_Average_Interest_Rate from financial_loan                                          
@@ -92,13 +92,16 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 - Bad Loan                                                                             
     - select sum(loan_amount) as Bad_Loan_Funded_Amt from financial_loan				
       where loan_status in ('Charged Off');
-8.Good/Bad Loan Total Received Amount**
+8. **Good/Bad Loan Total Received Amount**
 - Good Loan  	                     																                          
     - select sum(total_payment) as Good_Loan_Amt_Received from financial_loan							
       where loan_status in ('Fully Paid','Current');                                                  	 										
 - Bad Loan                                                                             
     - select sum(total_payment) as Bad_Loan_Amt_Received from financial_loan                                          
-      where loan_status in ('Charged Off');                                                     			                                                
+      where loan_status in ('Charged Off');
+9. **Loan Status Grid View**
+    - 
+                                               			                                                
 
 
 ## Dashboard Live here
