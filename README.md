@@ -61,6 +61,23 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 
     - select round(sum(int_rate)/COUNT(int_rate)*100,2) as PMTD_Average_Interest_Rate from financial_loan                                       
       where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;                                                                                
+5. **Average Debt-to-Income Ratio (Month to Date, Month over Month)**
+    - select Round(AVG(dti),4)*100 as AVG_DTI from financial_loan;                                      
+
+    - select Round(AVG(dti),4)*100 as MTD_AVG_DTI from financial_loan                                            
+      where MONTH(issue_date) = 12 and YEAR(issue_date)=2021;                                      
+
+    - select Round(AVG(dti),4)*100 as PMTD_AVG_DTI from financial_loan                                            
+      where MONTH(issue_date) = 11 and YEAR(issue_date)=2021;
+6. Good/Bad Loan Application Percentage
+- Good Loan                             
+    - select                                   
+	  COUNT(CASE when loan_status='Fully Paid' or loan_status='Current' then id end)*100/COUNT(id) as Good_Load_Percentage                                   
+      from financial_loan;                           
+                                                    
+4. **Total Amount Received (Month to Date, Month over Month)**                                                    
+4. **Total Amount Received (Month to Date, Month over Month)**                                                    
+4. **Total Amount Received (Month to Date, Month over Month)**                                                    
 
 
 ## Dashboard Live here
