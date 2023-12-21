@@ -224,7 +224,36 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
      [Loan Amount]                                  
      END)
 6. MoM Total Funded Amount
-   - ([MTD Total Funded Amount] - [PMTD Funded Amount])/[PMTD Funded Amount]        
+   - ([MTD Total Funded Amount] - [PMTD Funded Amount])/[PMTD Funded Amount]
+7. Total Amount Received
+   - SUM([Total Payment])
+8. MTD Total Amount Received
+   - SUM(IF (DATEDIFF('month',[Issue Date],{MAX([Issue Date])}))=0
+     THEN                                      
+     [Total Payment]                                       
+     END)
+9. MoM Total Amount Received
+    - ([MTD Total Received Amount]-[PMTD Total Amount Received])/[MTD Total Received Amount]
+10. Average Interest Rate
+    - AVG([Int Rate])
+11. MTD Average Interest Rate
+    - AVG(IF (DATEDIFF('month',[Issue Date],{MAX([Issue Date])}))=0                                
+     THEN                            
+     [Int Rate]                                 
+     END)
+12. MoM Average Interest Rate
+    - ([MTD Average Int Rate]-[PMTD Average Int Rate])/[PMTD Average Int Rate]
+13. Average DTI
+    - AVG([Dti])
+14. MTD Average DTI
+    - AVG(IF (DATEDIFF('month',[Issue Date],{MAX([Issue Date])}))=0                          
+     THEN                                                                 
+     [Dti]                           
+     END)
+15. MoM Average DTI
+    - ([MTD Average DTI]-[PMTD Average DTI])/[PMTD Average DTI]                                 
+
+    
                                  
 
 
