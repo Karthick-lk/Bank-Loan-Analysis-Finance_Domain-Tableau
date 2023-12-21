@@ -206,7 +206,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 	group by home_ownership                                
 	order by COUNT(id)DESC;
 
-## Created Calculated Fields
+## Created Calculated Fields in Tableau Desktop
 1. Total Loan Applications
    - COUNT([Id])
 2. MTD Total Loan Applications
@@ -251,7 +251,23 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
      [Dti]                           
      END)
 15. MoM Average DTI
-    - ([MTD Average DTI]-[PMTD Average DTI])/[PMTD Average DTI]                                 
+    - ([MTD Average DTI]-[PMTD Average DTI])/[PMTD Average DTI]
+16. Good Loan %
+    - COUNT(IF [Good vs Bad Loan]='Good Loan' THEN [Id] END)/COUNT([Id])
+17. Good Loan
+    - COUNT(IF [Good vs Bad Loan]='Good Loan' THEN [Id] END)
+18. Good Loan Funded Amount
+    - SUM(IF [Good vs Bad Loan]='Good Loan' THEN [Loan Amount] END)
+19. Good Loan Amount Received
+    - SUM(IF [Good vs Bad Loan]='Good Loan' THEN [Total Payment] END)
+20. Bad Loan %
+    - COUNT(IF [Good vs Bad Loan]='Bad Loan' THEN [Id] END)/COUNT([Id])
+21. Bad Loan
+    - COUNT(IF [Good vs Bad Loan]='Bad Loan' THEN [Id] END)/COUNT([Id])
+22. Bad Loan Funded Amount
+    - SUM(IF [Good vs Bad Loan]='Bad Loan' THEN [Loan Amount] END)
+23. Bad Loan Amount Received
+    - SUM(IF [Good vs Bad Loan]='Bad Loan' THEN [Total Payment] END)    
 
     
                                  
