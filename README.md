@@ -29,7 +29,7 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 **financial_loan.csv** : The dataset contains columns like id, address_state, application_type emp_length, emp_title, grade, home_ownership, home_ownership, issus_date, last_credit_pull_date, last_payment_date, loan_status, next_payment_date, member_id, purpose, sub_grade, term, verification_status, annual_income, dti, installment, int_rate, loan_amount, total_acc, total_payment. 
 
 ## Dashboard/Report Live here
-https://prod-uk-a.online.tableau.com/t/coventryuniversity/views/BankLoanDashboard/SUMMARY
+[https://prod-uk-a.online.tableau.com/t/coventryuniversity/views/BankLoanDashboard/SUMMARY](https://public.tableau.com/views/BankLoanDashboard_17031803847860/SUMMARY?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link)
 
 ## Created Dashboard/Report
 ![Dash1](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/e89dd9aa-3f9e-48c9-a2b2-3c4017f5f3cf)
