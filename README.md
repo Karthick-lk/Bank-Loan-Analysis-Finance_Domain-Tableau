@@ -204,7 +204,28 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 	sum(loan_amount) as Total_Loan_Amount                                 
  	from financial_loan                                    
 	group by home_ownership                                
-	order by COUNT(id)DESC;                                          
+	order by COUNT(id)DESC;
+
+## Created Calculated Fields
+1. Total Loan Applications
+   - COUNT([Id])
+2. MTD Total Loan Applications
+   - COUNT(IF (DATEDIFF('month',[Issue Date],{MAX([Issue Date])}))=0                              
+     THEN                         
+     [Id]                         
+     END)
+3. MoM Total Loan Applications
+   - ([MTD Total Loan Applications]-[PMTD Loan Applications])/[PMTD Loan Applications]
+4. Total Funded Amount
+   - SUM([Loan Amount])                    
+5. MTD Total Funded Amount
+   - SUM(IF (DATEDIFF('month',[Issue Date],{MAX([Issue Date])}))=0                                      
+     THEN                                   
+     [Loan Amount]                                  
+     END)
+6. MoM Total Funded Amount
+   - ([MTD Total Funded Amount] - [PMTD Funded Amount])/[PMTD Funded Amount]        
+                                 
 
 
 
