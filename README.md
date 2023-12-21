@@ -267,7 +267,12 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 22. Bad Loan Funded Amount
     - SUM(IF [Good vs Bad Loan]='Bad Loan' THEN [Loan Amount] END)
 23. Bad Loan Amount Received
-    - SUM(IF [Good vs Bad Loan]='Bad Loan' THEN [Total Payment] END)    
+    - SUM(IF [Good vs Bad Loan]='Bad Loan' THEN [Total Payment] END)
+24. Dynamic Measures
+    - IF [Select Measures]='Total Loan Applications' THEN [Total Loan Applications]                                   
+      ELSEIF [Select Measures]='Total Funded Amount' THEN [Total Funded Amount]                               
+      ELSEIF [Select Measures]='Total Amount Received' THEN [Total Amount Received]                                  
+      END                                    
 
     
                                  
