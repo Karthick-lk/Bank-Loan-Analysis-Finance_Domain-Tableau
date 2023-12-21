@@ -29,14 +29,14 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 **financial_loan.csv** : The dataset contains columns like id, address_state, application_type emp_length, emp_title, grade, home_ownership, home_ownership, issus_date, last_credit_pull_date, last_payment_date, loan_status, next_payment_date, member_id, purpose, sub_grade, term, verification_status, annual_income, dti, installment, int_rate, loan_amount, total_acc, total_payment. 
 
 ## Dashboard/Report Live here
-https://public.tableau.com/views/BankLoanDashboard_17031803847860/SUMMARY?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/BankLoanDashboard_17031803847860/SUMMARY?:language=en-GB&:display_count=n&:origin=viz_share_link
 
 ## Created Dashboard/Report
 ### SUMMARY VIEW
-![bells1](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/90f340b1-44b9-4c91-b28c-777d70d095a5)
+![dash1](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/782c5888-e245-4c7c-bde2-75d6728fa2fd)
 
 ### OVERVIEW VIEW
-![bells2](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/145ab5b7-71af-4115-bc95-b57caabfc627)
+![dash2](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/ebcbe014-2857-4143-855f-2fa64cf173d1)
 
 ### DETAILS VIEW
 ![bells3](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/3cfd8502-ebc4-4f94-9230-ba65e07cd449)
