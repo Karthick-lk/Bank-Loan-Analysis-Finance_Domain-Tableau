@@ -31,7 +31,12 @@ Bells Bank, is a fictional bank in the USA and it is one of the top prioritized 
 ## Dashboard/Report Live here
 
 
-## Created Report/Dashboard
+## Created Dashboard/Report
+![Dash1](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/e89dd9aa-3f9e-48c9-a2b2-3c4017f5f3cf)
+
+![Dash2](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/a00a9f11-55d6-4f8e-a623-4c0454e3788d)
+
+![dash3](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/2d3e5846-6016-4130-8e30-2163b1ae97dd)
 
 
 ## Implementing SQL for Stakeholders requirements
