@@ -42,7 +42,20 @@ https://public.tableau.com/views/BankLoanDashboard_17031803847860/SUMMARY?:langu
 ![bells3](https://github.com/guddushah/Bank-Loan-Analysis-Finance_Domain-Tableau/assets/40028193/3cfd8502-ebc4-4f94-9230-ba65e07cd449)
 
 ## Key Insights Obtained from the Dashboard
-
+1. Total Loan Application: 38.6K | MTD: 4.3K | MoM: 6.9%
+2. Total Funded Amount: $435.8M | MTD: $54.0M | MoM: 13.0%
+3. Total Amount Received: $473.1M | MTD: $58.1M | MoM: 13.7%
+4. Average Interest Rate: 12.0% | MTD: 12.4% | MoM: 3.5%
+5. Average DTI: 13.3% | MTD: 13.7% | MoM: 2.7%
+6. Total Good Loan Applications: 33.2K | Good Loan %: 86.2% | Good Loan Funded Amount: $370.2M | Good Loan Amount Received: $435.8M
+7. Total Bad Loan Applications: 5.3K | Bad Loan %: 13.8% | Bad Loan Funded Amount: $65.5M | Bad Loan Amount Received: $37.3M
+8. Slight linear growth in number of loan applications every following month.
+9. California recorded the highest number of loan applications
+10. Nearly three quarters of the loans applications were for the term period of 36 Months.
+11. People with more than 10 years of work history made the maximum loan applications.
+12. Mostly the purpose loan was for debt consolidation purpose whilst lowest for renewable energy.
+13.  The maximum number of applications was from people staying in rented home.
+14.  Highest number of loan was issued to people staying in mortgage home.
 
 ## Implementing SQL for Stakeholders requirements
 1. **Total Loan Applications (Month to Date, Month over Month)**                               
